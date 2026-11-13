@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tiedustelu – Merituuli Venekauppa</title>
+  <meta name="description" content="Lähetä tiedustelu Merituuli Venekaupalle ja kysy lisätietoja myynnissä olevista veneistä.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#sisalto">Siirry sisältöön</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">Meri<span>tuuli</span> Venekauppa</a>
+      <nav class="main-nav" aria-label="Päävalikko">
+        <ul>
+          <li><a href="index.html">Etusivu</a></li>
+          <li><a href="index.html#veneet">Veneet</a></li>
+          <li><a href="contact.html" aria-current="page">Tiedustelu</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="sisalto" class="container">
+    <nav class="breadcrumb" aria-label="Murupolku">
+      <ol>
+        <li><a href="index.html">Etusivu</a></li>
+        <li aria-current="page">Tiedustelu</li>
+      </ol>
+    </nav>
+
+    <section>
+      <h1>Lähetä tiedustelu</h1>
+      <p class="section-intro">Kerro, mistä veneestä olet kiinnostunut, niin otamme yhteyttä. Tähdellä (*) merkityt kentät ovat pakollisia.</p>
+
+      <div class="contact-layout">
+        <div class="panel">
+          <form action="https://httpbin.org/post" method="post">
+            <div class="form-group">
+              <label for="name">Nimi *</label>
+              <input type="text" id="name" name="name" required minlength="2" autocomplete="name">
+            </div>
+
+            <div class="form-group">
+              <label for="email">Sähköpostiosoite *</label>
+              <input type="email" id="email" name="email" required autocomplete="email">
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Puhelinnumero <span class="hint">(vapaaehtoinen)</span></label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" pattern="[0-9+ ()\-]{6,20}" title="Anna puhelinnumero, esim. 050 123 4567">
+            </div>
+
+            <div class="form-group">
+              <label for="boat">Kiinnostava vene</label>
+              <select id="boat" name="boat">
+                <option value="saaristo-650">Saaristo 650 Cruiser – 34 900 €</option>
+                <option value="tuuli-480">Tuuli 480 Fish – 12 900 €</option>
+                <option value="aallokko-780">Aallokko 780 Sport – 69 500 €</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Viesti *</label>
+              <textarea id="message" name="message" rows="6" required minlength="10"></textarea>
+            </div>
+
+            <button class="btn" type="submit">Lähetä</button>
+          </form>
+        </div>
+
+        <aside class="panel">
+          <h2>Yhteystiedot</h2>
+          <ul class="contact-list">
+            <li><strong>Osoite</strong>Satamatie 12, 02150 Espoo</li>
+            <li><strong>Puhelin</strong><a href="tel:+358501234567">050 123 4567</a></li>
+            <li><strong>Sähköposti</strong><a href="mailto:myynti@merituuli.example">myynti@merituuli.example</a></li>
+            <li><strong>Aukioloajat</strong>ma–pe 9–17<br>la 10–14<br>su suljettu</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p><strong>Merituuli Venekauppa</strong></p>
+        <p>Satamatie 12, 02150 Espoo</p>
+      </div>
+      <div>
+        <p class="copy">Kuvitteellinen yritys koulutyötä varten.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/contact.js"></script>
+</body>
+</html>
